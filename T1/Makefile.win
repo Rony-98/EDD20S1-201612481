@@ -1,0 +1,30 @@
+# Project: TT1
+# Makefile created by Dev-C++ 5.0.0.4
+
+CPP      = g++.exe
+CC       = gcc.exe
+WINDRES  = windres.exe
+RES      = 
+OBJ      = ../../ESCRITORIO/DOCUMENTOS/USAC/Proyectos/C-C++/main.o $(RES)
+LINKOBJ  = ../../ESCRITORIO/DOCUMENTOS/USAC/Proyectos/C-C++/main.o $(RES)
+LIBS     = -L"C:/Program Files (x86)/Dev-Cpp/lib" -L"C:/Program Files (x86)/Dev-Cpp/lib/gcc" -static-libstdc++ -static-libgcc  
+INCS     = -I"C:/Program Files (x86)/Dev-Cpp/include" 
+CXXINCS  = -I"C:/Program Files (x86)/Dev-Cpp/include" 
+BIN      = TAREA1.exe
+CXXFLAGS = $(CXXINCS)  
+CFLAGS   = $(INCS)  
+RM       = rm -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before TAREA1.exe all-after
+
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o "TAREA1.exe" $(LIBS)
+
+../../ESCRITORIO/DOCUMENTOS/USAC/Proyectos/C-C++/main.o: ../../ESCRITORIO/DOCUMENTOS/USAC/Proyectos/C-C++/main.cpp
+	$(CPP) -c ../../ESCRITORIO/DOCUMENTOS/USAC/Proyectos/C-C++/main.cpp -o ../../ESCRITORIO/DOCUMENTOS/USAC/Proyectos/C-C++/main.o $(CXXFLAGS)
